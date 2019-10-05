@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- filename: egoisticlily.xml -->
+<component>
+	<name>org.freedesktop.IBus.EgoisticLily</name>
+	<description>EgoisticLily Component</description>
+	<exec>@PACKAGE_DIR@/src/ibus-engine-egoisticlily --ibus</exec>
+	<version>0.0.1</version>
+	<author>Hashimoto Masahiko</author>
+	<license>MIT</license>
+	<homepage>https://github.com/hashimom/EgoisticLily</homepage>
+	<textdomain>ibus-egoisticlily</textdomain>
+
+	<!-- for engines -->
+	<observed-paths>
+	  <path>@PACKAGE_DIR@/config/egoisticlily/engines.xml</path>
+	  <path>@PACKAGE_DIR@/config/egoisticlily/default.xml</path>
+	</observed-paths>
+	<engines exec="@PACKAGE_DIR@/src/ibus-engine-egoisticlily --xml" />
+</component>

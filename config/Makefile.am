@@ -1,0 +1,2 @@
+SUBDIRS=egoisticlily gschema ibusengines
+

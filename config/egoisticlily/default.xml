@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engines>
+	<engine>
+		<name>egoisticlily</name>
+		<language>ja</language>
+		<license>MIT</license>
+		<author>Hashimoto Masahiko</author>
+		<icon>ibus-egoisticlily</icon>
+		<layout>jp</layout>
+		<layout_variant></layout_variant>
+		<layout_option></layout_option>
+		<longname translatable="no">EgoisticLily</longname>
+		<description>EgoisticLily Input Method</description>
+		<rank>99</rank>
+		<symbol>&#x3042;</symbol>
+		<icon_prop_key>InputMode</icon_prop_key>
+		<version>0.0.1</version>
+		<textdomain>ibus-egoisticlily</textdomain>
+	</engine>
+</engines>
