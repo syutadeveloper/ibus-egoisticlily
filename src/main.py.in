@@ -54,7 +54,7 @@ import factory
 
 class IMApp:
     def __init__(self, exec_by_ibus):
-        command_line = '/home/cream/opensource/ibus/local-egoisticlily/ibus-engine-egoisticlily --ibus'
+        command_line = '@PACKAGE_DIR@ibus-engine-egoisticlily --ibus'
         self.__component = IBus.Component(name='org.freedesktop.IBus.EgoisticLily',
                                           description='EgoisticLily Component',
                                           version='0.0.1',
