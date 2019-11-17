@@ -91,10 +91,6 @@ class IMApp:
         # for engineunit in self.__bus.list_engines():
         #    print("list:" + engineunit.get_name())
 
-        for activeengine in self.__bus.list_active_engines():
-            print("active list:" + activeengine.get_name())
-
-            
     def run(self):
         self.__mainloop.run()
 
