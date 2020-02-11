@@ -10,7 +10,7 @@ Caution: State is sample. Do not production use.
 
 # Install
 ## build
-    run command above.
+    run command below.
     1. autoreconf
     2. ./configure --with-egoisticlily-model=<<egoisticlily-model path>> --datadir=<<data dir>>
     3. make
