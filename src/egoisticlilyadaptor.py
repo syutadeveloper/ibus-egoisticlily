@@ -18,16 +18,24 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+import grpc
+import egoisticlily.proto.egoisticlily_pb2_grpc
+import egoisticlily.proto.egoisticlily_pb2
 
-from egoisticlily.converter import Converter
+CHANNEL_ADDRESS = "[::]:50055"
 
 class EgoisticLilyAdaptor:
     def __init__(self, model_path):
-        self.__converter = Converter(model_path)
+        """ Egoisticlily adopter.
 
+        :param model_path: now not use.
+        """
+        self.__channel = grpc.insecure_channel(CHANNEL_ADDRESS)
+        self.__stub = egoisticlily.proto.egoisticlily_pb2_grpc.EgoisticLilyServiceStub(self.__channel)
     
     def set_string(self, text):
-        self.converted_text = self.__converter(text)
+        response = self.__stub.Convert(egoisticlily.proto.egoisticlily_pb2.ConvertReq(in_str=text))
+        self.converted_text = response.out_str
 
     def get_nr_segments(self):
         return 1
@@ -40,3 +48,8 @@ class EgoisticLilyAdaptor:
 
     def commit_segment(self, segment_index, candidate_index):
         pass
+
+    def cleanup(self):
+        # debug
+        print("cleanup")
+        self.__channel.close()

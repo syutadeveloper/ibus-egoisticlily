@@ -95,6 +95,10 @@ class IMApp:
         self.__mainloop.run()
 
     def __bus_disconnected_cb(self, bus):
+        # debug
+        print("__bus_disconnected_cb")
+
+                
         self.__mainloop.quit()
 
 
